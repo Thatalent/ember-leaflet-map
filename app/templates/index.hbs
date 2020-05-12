@@ -1,2 +1,10 @@
-{{poc-map}}
-text tes
+{{#leaflet-map lat=lat lng=lng zoom=zoom crs=crs as |layers|}}
+    {{#each dmas as |dma|}}
+     {{#layers.geojson geoJSON=dma stroke=true fill=true fillColor=dma.color color=dma.color fillOpacity=1.0 as |geojson|}}
+      {{!-- {{#geojson.tooltip sticky=true}}
+            {{dma.properties.LONG_NAME}}
+      {{/geojson.tooltip}} --}}
+     {{/layers.geojson}}
+    {{/each}}
+        {{#layers.geojson geoJSON=states fill=false weight=1 color="white" as |geojson|}}{{/layers.geojson}}
+{{/leaflet-map}}

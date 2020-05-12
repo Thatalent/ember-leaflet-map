@@ -44,6 +44,7 @@
   },
   "private": true,
   "dependencies": {
+    "d3": "^5.16.0",
     "proj4leaflet": "^1.0.2"
   }
 }
